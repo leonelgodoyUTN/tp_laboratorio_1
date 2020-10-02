@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1600622670 source:c:\users\leonel\documents\misbibliotecas\utn.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+
+1600643776 source:c:\users\leonel\documents\tp1godoy\main.c
+	<stdio.h>
+	<stdlib.h>
+	"misOperaciones.h"
+
+1600622580 c:\users\leonel\documents\misbibliotecas\utn.h
+
+1600643052 c:\users\leonel\documents\tp1godoy\misoperaciones.h
+
+1601632662 source:c:\users\leonel\desktop\areadetrabajo\tp1godoy\tp1-calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	"misOperaciones.h"
+
+1601632662 c:\users\leonel\desktop\areadetrabajo\tp1godoy\tp1-calculadora\misoperaciones.h
+
