@@ -5,7 +5,7 @@
 int main()
 {   //Getfloat
     //float retorno;
-    //utn_getNumeroConDecimales(&retorno, "ingrese:float : ", "error", 1, 99.9,3);
+    //utn_getNumeroFlotante(&retorno, "ingrese:float : ", "error", 1, 99.9,3);
     //printf("\nEl float es %.2f", retorno);
 
 

@@ -47,7 +47,6 @@ static int myGets(char* cadena, int longitud)
 static int esNumerica(char* cadena)
 {
     int i=0;
-    int retorno=1;
     if(cadena!=NULL && strlen(cadena)>0)
     {
         while(cadena[i]!='\0')
@@ -71,22 +70,22 @@ static int esNumerica(char* cadena)
 
 int esNumericoFlotante(char* str)
 {
-   int i=0;
-   int cantidadPuntos=0;
-   while(str[i] != '\0')
-   {
-       if (str[i] == '.' && cantidadPuntos == 0)
-       {
-           cantidadPuntos++;
-           i++;
-           continue;
+    int i=0;
+    int cantidadPuntos=0;
+    while(str[i] != '\0')
+    {
+        if (str[i] == '.' && cantidadPuntos == 0)
+        {
+            cantidadPuntos++;
+            i++;
+            continue;
 
-       }
-       if(str[i] < '0' || str[i] > '9')
-           return 0;
-       i++;
-   }
-   return 1;
+        }
+        if(str[i] < '0' || str[i] > '9')
+            return 0;
+        i++;
+    }
+    return 1;
 }
 
 //utiliza myGets() y esNumerica()
@@ -186,12 +185,12 @@ int utn_getNumero(int* pResultado,
 * \param reintentos Numero de reintentos disponibles
 * \return Retorna 0 si se obtuvo el numero y -1 si no
 */
-int utn_getNumeroConDecimales(float* pResultado,
-                              char* mensaje,
-                              char* mensajeError,
-                              float minimo,
-                              float maximo,
-                              int reintentos)
+int utn_getNumeroFlotante(float* pResultado,
+                          char* mensaje,
+                          char* mensajeError,
+                          float minimo,
+                          float maximo,
+                          int reintentos)
 {
     float bufferFloat;
     int retorno=-1;
@@ -247,7 +246,7 @@ int utn_getTexto(char* pTexto,int tamBuffer, char* mensaje, char* mensajeError)
  * \return retorna el número aleatorio generado
  *
  */
-char getNumeroAleatorio(int desde , int hasta, int iniciar)
+char getNumeroAleatorio(int desde, int hasta, int iniciar)
 {
     if(iniciar)
         srand (time(NULL));
@@ -263,14 +262,14 @@ char getNumeroAleatorio(int desde , int hasta, int iniciar)
  */
 int esSoloLetras(char str[])
 {
-   int i=0;
-   while(str[i] != '\0')
-   {
-       if((str[i] != ' ') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
-           return 0;
-       i++;
-   }
-   return 1;
+    int i=0;
+    while(str[i] != '\0')
+    {
+        if((str[i] != ' ') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
+            return 0;
+        i++;
+    }
+    return 1;
 }
 
 
@@ -283,17 +282,17 @@ int esSoloLetras(char str[])
  */
 int esTelefono(char str[])
 {
-   int i=0;
-   int contadorGuiones=0;
-   while(str[i] != '\0')
-   {
-       if((str[i] != ' ') && (str[i] != '-') && (str[i] < '0' || str[i] > '9'))
-           return 0;
-       if(str[i] == '-')
+    int i=0;
+    int contadorGuiones=0;
+    while(str[i] != '\0')
+    {
+        if((str[i] != ' ') && (str[i] != '-') && (str[i] < '0' || str[i] > '9'))
+            return 0;
+        if(str[i] == '-')
             contadorGuiones++;
-       i++;
-   }
-   if(contadorGuiones==1) // debe tener un guion
+        i++;
+    }
+    if(contadorGuiones==1) // debe tener un guion
         return 1;
 
     return 0;
@@ -410,9 +409,11 @@ int getValidInt(char requestMessage[],char errorMessage[], int lowLimit, int hiL
 void cleanStdin(void)
 {
     int c;
-    do {
+    do
+    {
         c = getchar();
-    } while (c != '\n' && c != EOF);
+    }
+    while (c != '\n' && c != EOF);
 }
 
 /**
@@ -440,4 +441,33 @@ void getValidString(char requestMessage[],char errorMessage[], char input[])
 }
 
 
+int utn_getChar(char* pResultado,
+                char* mensaje,
+                char* mensajeError,
+                char minimo,
+                char maximo,
+                int reintentos)
+{
+    char bufferChar;
+    int retorno=-1;
 
+    if(pResultado != NULL && mensaje != NULL && mensajeError != NULL)
+    {
+        while(reintentos>0)
+        {
+            reintentos--;
+            printf("%s", mensaje);
+            scanf("%c",&bufferChar);
+                if(bufferChar >= minimo && bufferChar <= maximo)
+                {
+                    *pResultado = bufferChar;
+                    retorno =0;
+                    break;
+                }
+
+            printf("%s",mensajeError);
+        }
+    }
+
+    return retorno;
+}

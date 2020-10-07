@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1601921134 source:c:\users\leonel\desktop\areadetrabajo\tp_laboratorio_1\bibliotecautn\bibliotecautn\main.c
+1602094674 source:c:\users\leonel\desktop\areadetrabajo\tp_laboratorio_1\bibliotecautn\bibliotecautn\main.c
 	<stdio.h>
 	<stdlib.h>
 	"utn.h"
 
-1601922153 source:c:\users\leonel\desktop\areadetrabajo\tp_laboratorio_1\bibliotecautn\bibliotecautn\utn.c
+1602094674 source:c:\users\leonel\desktop\areadetrabajo\tp_laboratorio_1\bibliotecautn\bibliotecautn\utn.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<string.h>
 
-1601922106 c:\users\leonel\desktop\areadetrabajo\tp_laboratorio_1\bibliotecautn\bibliotecautn\utn.h
+1602095076 c:\users\leonel\desktop\areadetrabajo\tp_laboratorio_1\bibliotecautn\bibliotecautn\utn.h
 

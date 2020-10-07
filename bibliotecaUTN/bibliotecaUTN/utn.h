@@ -6,6 +6,7 @@
 //static int esNumerica(char* cadena);
 //static int getInt(int* pResultado);
 //static int getFloat(float* pResultado);
+//static int getChar(char* pResultado);
 int esNumericoFlotante(char* str);
 char getNumeroAleatorio(int desde , int hasta, int iniciar);
 int esNumericoFlotante(char* str);
@@ -29,13 +30,19 @@ int utn_getNumero(int* pResultado,
 
 
 
-int utn_getNumeroConDecimales(float* pResultado,
+int utn_getNumeroFlotante(float* pResultado,
                               char* mensaje,
                               char* mensajeError,
                               float minimo,
                               float maximo,
                               int reintentos);
 
+int utn_getChar(char* pResultado,
+                char* mensaje,
+                char* mensajeError,
+                char minimo,
+                char maximo,
+                int reintentos);
 
 int utn_getTexto(char* pTexto,int tamBuffer, char* mensaje, char* mensajeError);
 
