@@ -1,12 +1,6 @@
 //#ifndef UTN_H_INCLUDED
 //#define UTN_H_INCLUDED
-//comente los prototipos de las funcones que son static itn,
-//pues tiraba warnings la compilacion
-//static int myGets(char* chadena, int longitud);
-//static int esNumerica(char* cadena);
-//static int getInt(int* pResultado);
-//static int getFloat(float* pResultado);
-//static int getChar(char* pResultado);
+int myGets(char* cadena, int longitud);
 int esNumericoFlotante(char* str);
 char getNumeroAleatorio(int desde , int hasta, int iniciar);
 int esNumericoFlotante(char* str);

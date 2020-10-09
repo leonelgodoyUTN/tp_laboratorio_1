@@ -17,8 +17,8 @@
  * \return retorna 0 (exito) si se obtiene la cadena y -1 (error) si no
  *
  */
-static int myGets(char* cadena, int longitud)
-{
+int myGets(char* cadena, int longitud)
+{fflush(stdin);
     if(cadena != NULL && longitud >0 && fgets(cadena,longitud,stdin )==cadena)
     {
         fflush(stdin); // LINUX-> __fpurge o WIN-> fflush o MAC-> fpurge
@@ -226,12 +226,14 @@ int utn_getTexto(char* pTexto,int tamBuffer, char* mensaje, char* mensajeError)
 {
     int retorno=-1;
     char buffer[tamBuffer];
-    if(pTexto != NULL)
+    if(pTexto != NULL && tamBuffer>0)
     {
+        printf("\n%s", mensaje);
         if(myGets(buffer,sizeof(buffer))==0)
         {
-            pTexto = buffer;
-            retorno = 0;
+            //pTexto = buffer;//que boludo...
+            strcpy(pTexto, buffer);
+            retorno = 1;
         }
     }
     return retorno;
